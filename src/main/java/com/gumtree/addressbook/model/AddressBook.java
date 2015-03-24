@@ -1,5 +1,7 @@
 package com.gumtree.addressbook.model;
 
+import org.joda.time.Days;
+
 import java.util.List;
 
 public class AddressBook {
@@ -31,6 +33,26 @@ public class AddressBook {
             }
         }
         return oldest;
+    }
+
+    public Integer findAgeDifferenceInDays(String name1, String name2) {
+        Person person1 = findPersonByName(name1);
+        Person person2 = findPersonByName(name2);
+
+        if (person1 == null  || person2 == null) {
+            return null;
+        }
+
+        return Days.daysBetween(person2.getDob(), person1.getDob()).getDays();
+    }
+
+    private Person findPersonByName(String name) {
+        for (Person person : persons) {
+            if(person.getName().equals(name)) {
+                return person;
+            }
+        }
+        return null;
     }
 
     @Override

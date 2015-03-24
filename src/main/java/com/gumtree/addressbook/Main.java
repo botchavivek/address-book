@@ -14,6 +14,8 @@ public class Main {
         System.out.println("Males count: " + addressBook.getMaleCount());
         // 2. Who is the oldest person in the address book?
         System.out.println("Oldest person: " + addressBook.findOldestPerson());
-
+        // 3. How many days older is Bill than Paul?
+        System.out.println("How many days older is Bill than Paul?:"
+                + addressBook.findAgeDifferenceInDays("Paul Robinson", "Bill McKnight"));
     }
 }
