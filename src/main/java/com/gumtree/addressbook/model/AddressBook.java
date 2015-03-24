@@ -22,4 +22,13 @@ public class AddressBook {
         }
         return count;
     }
+
+    @Override
+    public boolean equals(Object other) {
+        if (this == other) return true;
+        if (!(other instanceof AddressBook)) return false;
+
+        return persons.equals(((AddressBook) other).persons);
+
+    }
 }
