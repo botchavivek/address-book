@@ -12,6 +12,8 @@ public class Main {
 
         // 1. How many males are in the address book?
         System.out.println("Males count: " + addressBook.getMaleCount());
+        // 2. Who is the oldest person in the address book?
+        System.out.println("Oldest person: " + addressBook.findOldestPerson());
 
     }
 }

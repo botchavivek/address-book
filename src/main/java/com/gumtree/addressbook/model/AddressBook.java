@@ -23,6 +23,16 @@ public class AddressBook {
         return count;
     }
 
+    public Person findOldestPerson() {
+        Person oldest = null;
+        for (Person person : persons) {
+            if (oldest == null || person.getDob().isBefore(oldest.getDob())) {
+                oldest = person;
+            }
+        }
+        return oldest;
+    }
+
     @Override
     public boolean equals(Object other) {
         if (this == other) return true;
